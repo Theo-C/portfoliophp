@@ -25,7 +25,34 @@ $work = new Works;
         ?></p>
 
     <br>
-    <a href="login.php">Se connecter</a>
+    <!-- <a href="login.php">Se connecter</a>
+
+    <a href="logout.php">Se deconnecter</a> -->
+
+
+          <a href="logout.php">
+            <?php if(isset($_SESSION["account"]["username"]))
+              {
+                echo "Se deconnecter";
+              }
+            ?>
+          </a>
+          <a href="login.php">
+            <?php if(isset($_SESSION["account"]["username"]) == false)
+              {
+                echo "Se connecter";
+              }
+            ?>
+          </a>
+
+
+
+
+
+
+
+
+
     <?php
         $allworks = $work->get_works();
         foreach($allworks as $w)
