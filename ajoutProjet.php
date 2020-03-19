@@ -6,6 +6,30 @@
   </head>
   <body>
 
+  	<?php
+session_start();
+include_once("php/code.php");
+
+$work = new Works;
+
+if(isset($_POST["submit"]))
+{
+    if($_POST["submit"] === "OK")
+{
+    if($_POST['title'] != NULL && $_POST['desc'] != NULL)
+    {
+        $work->create_works($_POST["title"], ($_POST["desc"]));
+        header("Location: /index.php");
+    }
+    else
+    {
+        echo("Remplis le formulaire");
+    }
+}
+}
+
+?>
+
     <form action=".php" method="post">
 
     <div class="container">
