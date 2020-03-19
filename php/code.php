@@ -70,8 +70,9 @@ class Works {
         global $db;
         $title = $_POST['title'];
         $description = $_POST['desc'];
-        $request = $db->prepare('INSERT INTO Works (title, description) VALUES (:title, :description)');
-        $request->execute([':title' => $title, 'description' => $description]);
+        $urlimg = $_POST['urlimg'];
+        $request = $db->prepare('INSERT INTO Works (title, description, urlimg) VALUES (:title, :description, :urlimg)');
+        $request->execute([':title' => $title, 'description' => $description, 'urlimg' => $urlimg]);
     }
 
     function update_works($title, $description, $id)

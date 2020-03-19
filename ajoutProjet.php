@@ -41,7 +41,7 @@ if(isset($_POST["submit"]))
       Envoyez ce fichier : <input name="userfile" type="file" />
       <input type="submit" value="Envoyer le fichier" />
     </form>
-    <form action=".php" method="post">
+    <form action="ajoutProjet.php" method="post">
 
     <div class="container">
         <label for="title"><b>titre</b></label>
