@@ -32,9 +32,8 @@ if(isset($_POST["submit"]))
 
 ?>
 
-<<<<<<< HEAD
+
     <form action="ajoutProjet.php" method="post">
-=======
     <form enctype="multipart/form-data" action="_URL_" method="post">
       <!-- MAX_FILE_SIZE doit précéder le champ input de type file -->
       <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
@@ -43,7 +42,6 @@ if(isset($_POST["submit"]))
       <input type="submit" value="Envoyer le fichier" />
     </form>
     <form action=".php" method="post">
->>>>>>> 2ae3a8d47e82ae2a34482741096a90750b7e8472
 
     <div class="container">
         <label for="title"><b>titre</b></label>
