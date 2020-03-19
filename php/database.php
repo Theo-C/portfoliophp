@@ -2,7 +2,7 @@
 
 $DB_DSN = "mysql:dbname=php;host=localhost";
 $DB_USER = "php";
-$DB_PASSWORD = "eniatipacnatsu";
+$DB_PASSWORD = "phpmmi";
 
 
 try {
