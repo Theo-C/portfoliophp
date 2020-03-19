@@ -25,11 +25,6 @@ $work = new Works;
         ?></p>
 
     <br>
-    <!-- <a href="login.php">Se connecter</a>
-
-    <a href="logout.php">Se deconnecter</a> -->
-
-
           <a href="logout.php">
             <?php if(isset($_SESSION["account"]["username"]))
               {
@@ -45,13 +40,14 @@ $work = new Works;
             ?>
           </a>
 
-
-
-
-
-
-
-
+          <br>
+          <a href="ajoutProjet.php">
+            <?php if(isset($_SESSION["account"]["username"]))
+              {
+                echo "Ajouter un projet";
+              }
+            ?>
+          </a>
 
     <?php
         $allworks = $work->get_works();
