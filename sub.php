@@ -17,7 +17,7 @@ if(isset($_POST["submit"]))
 {
     if($_POST['uname'] != NULL && $_POST['psw'] != NULL && $_POST['confirm_psw'] != NULL && $_POST['psw'] == $_POST['confirm_psw'])
     {
-        $user->create_user($_POST["uname"], $_POST["psw"]);
+        $user->create_user($_POST["uname"], password_hash($_POST["psw"], PASSWORD_DEFAULT));
         header("Location: login.php");
     }
     else

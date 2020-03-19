@@ -44,7 +44,7 @@ class Users {
 
         if (isset ($_POST['uname'])  && isset($_POST['psw']) && $_POST["confirm_psw"]) {
             $username = $_POST['uname'];
-            $password = $_POST['psw'];
+            $password = password_hash($_POST["psw"], PASSWORD_DEFAULT);
             $request = $db->prepare('INSERT INTO Users(username, password) VALUES(:username, :password)');
             if($request->execute([':username' => $username, ':password' => $password])){
                 $message = 'Données bien envoyées';
