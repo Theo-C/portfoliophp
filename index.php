@@ -20,11 +20,12 @@ $work = new Works;
     else
     {
         echo "NOT CONNECTED ";
-        echo(password_hash("azerty", PASSWORD_DEFAULT));
+        // echo(password_hash("OUI", PASSWORD_DEFAULT));
     }
         ?></p>
 
     <br>
+    <a href="login.php">Se connecter</a>
     <?php
         $allworks = $work->get_works();
         foreach($allworks as $w)

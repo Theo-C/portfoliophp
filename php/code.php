@@ -31,7 +31,7 @@ class Users {
                 'username' => $user["username"]
             ];
 
-            header('Location: /demophp/index.php');
+            header('Location: index.php');
         }
         else
         {
