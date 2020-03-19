@@ -23,19 +23,22 @@ class Users {
 
         if(password_verify($password, $user["password"]))
         {
+            echo("Vous êtes connectés");
+
             session_start();
             $_SESSION["account"] = [
                 'id' => $user["id"],
                 'username' => $user["username"]
             ];
 
-            header('Location: /');
+            header('Location: /demophp/index.php');
         }
         else
         {
-            echo("Impossible de se connecter");
+            echo("Impossible de se connecter ");
         }
     }
+
 }
 
 class Works {

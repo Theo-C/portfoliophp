@@ -6,7 +6,7 @@ include_once("php/code.php");
 $user = new Users;
 if(isset($_SESSION["account"]["id"]))
 {
-    header('Location: /');
+    header('Location: /demophp/index.php');
 }
 if(isset($_POST["submit"]))
 {

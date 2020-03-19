@@ -19,9 +19,8 @@ $work = new Works;
     }
     else
     {
-        echo "NOT CONNECTED";
-        echo ("stp affiche toi");
-        echo(password_hash("admin", PASSWORD_DEFAULT));
+        echo "NOT CONNECTED ";
+        echo(password_hash("azerty", PASSWORD_DEFAULT));
     }
         ?></p>
 
@@ -35,8 +34,6 @@ $work = new Works;
             echo($w["description"]);
         }
 
-        echo ("stp affiche toi");
-        echo(password_hash("admin", PASSWORD_DEFAULT));
         ?>
 </body>
 </html>
