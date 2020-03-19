@@ -19,7 +19,7 @@ if(isset($_POST["submit"]))
     if($_POST['title'] != NULL && $_POST['desc'] != NULL)
     {
         $work->create_works($_POST["title"], ($_POST["desc"]));
-        header("Location: /index.php");
+        header("Location: index.php");
     }
     else
     {
@@ -30,7 +30,7 @@ if(isset($_POST["submit"]))
 
 ?>
 
-    <form action=".php" method="post">
+    <form action="ajoutProjet.php" method="post">
 
     <div class="container">
         <label for="title"><b>titre</b></label>
