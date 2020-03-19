@@ -68,9 +68,10 @@ class Works {
     function create_works($title, $description)
     {
         global $db;
-
-        $request = $db->prepare('INSERT INTO works (title, description) VALUES (?, ?)');
-        $request->execute([$title, $description]);
+        $title = $_POST['title'];
+        $description = $_POST['desc'];
+        $request = $db->prepare('INSERT INTO Works (title, description) VALUES (:title, :description)');
+        $request->execute([':title' => $title, 'description' => $description]);
     }
 
     function update_works($title, $description, $id)
