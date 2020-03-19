@@ -2,7 +2,8 @@
 
 $DB_DSN = "mysql:dbname=php;host=localhost";
 $DB_USER = "php";
-$DB_PASSWORD = "";
+$DB_PASSWORD = "phpmmi";
+
 
 try {
     $db = new PDO($DB_DSN, $DB_USER, $DB_PASSWORD);

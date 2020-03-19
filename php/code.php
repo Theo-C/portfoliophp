@@ -39,6 +39,22 @@ class Users {
         }
     }
 
+    function create_user($username, $password) {
+        global $db;
+
+        if (isset ($_POST['uname'])  && isset($_POST['psw']) ) {
+          $name = $_POST['uname'];
+          $password = $_PASSWORD['psw'];
+          $sql = 'INSERT INTO Users(username, password) VALUES(:username, :password)';
+          $statement = $connection->prepare($sql);
+
+              if ($statement->execute([':uname' => $username, ':password' => $password])) {
+                $message = 'data inserted successfully';
+             }
+
+         }
+
+}
 }
 
 class Works {
