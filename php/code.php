@@ -42,19 +42,15 @@ class Users {
     function create_user($username, $password) {
         global $db;
 
-        if (isset ($_POST['uname'])  && isset($_POST['psw']) ) {
-          $name = $_POST['uname'];
-          $password = $_PASSWORD['psw'];
-          $sql = 'INSERT INTO Users(username, password) VALUES(:username, :password)';
-          $statement = $connection->prepare($sql);
-
-              if ($statement->execute([':uname' => $username, ':password' => $password])) {
-                $message = 'data inserted successfully';
-             }
-
+        if (isset ($_POST['uname'])  && isset($_POST['psw']) && $_POST["confirm_psw"]) {
+            $username = $_POST['uname'];
+            $password = $_POST['psw'];
+            $request = $db->prepare('INSERT INTO Users(username, password) VALUES(:username, :password)');
+            if($request->execute([':username' => $username, ':password' => $password])){
+                $message = 'Données bien envoyées';
+            }
          }
-
-}
+    }
 }
 
 class Works {
