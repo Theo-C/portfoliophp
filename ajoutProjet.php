@@ -6,6 +6,32 @@
     <title></title>
   </head>
   <body>
+
+
+  	<?php
+session_start();
+include_once("php/code.php");
+
+$work = new Works;
+
+if(isset($_POST["submit"]))
+{
+    if($_POST["submit"] === "OK")
+{
+    if($_POST['title'] != NULL && $_POST['desc'] != NULL)
+    {
+        $work->create_works($_POST["title"], ($_POST["desc"]));
+        header("Location: /index.php");
+    }
+    else
+    {
+        echo("Remplis le formulaire");
+    }
+}
+}
+
+?>
+
     <form enctype="multipart/form-data" action="_URL_" method="post">
       <!-- MAX_FILE_SIZE doit précéder le champ input de type file -->
       <input type="hidden" name="MAX_FILE_SIZE" value="30000" />

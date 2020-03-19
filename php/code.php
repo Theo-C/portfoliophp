@@ -65,7 +65,7 @@ class Works {
         return($user);
     }
 
-    function create($title, $description)
+    function create_works($title, $description)
     {
         global $db;
 
@@ -73,11 +73,19 @@ class Works {
         $request->execute([$title, $description]);
     }
 
-    function update($title, $description, $id)
+    function update_works($title, $description, $id)
     {
         global $db;
 
         $request = $db->prepare('UPDATE works SET title=?, description=? WHERE id=?');
+        $request->execute([$title, $description, $id]);
+    }
+
+    function delete_works($title, $description, $id)
+    {
+        global $db;
+
+        $request = $db->prepare('DELETE FROM Works WHERE id=$id');
         $request->execute([$title, $description, $id]);
     }
 
