@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title> Inscription </title>
+
 </head>
 <body>
 
@@ -11,14 +17,15 @@ include_once("php/code.php");
 
 $user = new Users;
 
-if(isset($_POST["submit"]))
+
+if(isset($_POST["save"]))
 {
-    if($_POST["submit"] === "OK")
+    if($_POST["save"] === "OK")
 {
     if($_POST['uname'] != NULL && $_POST['psw'] != NULL && $_POST['confirm_psw'] != NULL && $_POST['psw'] == $_POST['confirm_psw'])
     {
         $user->create_user($_POST["uname"], password_hash($_POST["psw"], PASSWORD_DEFAULT));
-        header("Location: login.php");
+        header("Location: /login.php");
     }
     else
     {
@@ -28,44 +35,32 @@ if(isset($_POST["submit"]))
 }
 
 ?>
-<form action="sub.php" method="post">
-<div class="field-column">
-    <label for="username">Nom d'utilisateur</label>
-    <div>
-        <input type="text" class="demo-input-box"
-            name="uname" required>
+
+<div class="inscriptionCss">
+<form action="sub.php" method="POST">
+
+    <div class="form-group">
+        <label>Nom d'utilisateur</label>
+        <input type="text" name="uname" placeholder="exemple : Jacques" class="form-control" required>
     </div>
-</div>
 
-    <br>
-
-<div class="field-column">
-    <label for="psw">Mot de passe</label>
-
-    <div>
-        <input type="password" class="demo-input-box"
-        name="psw" required >
+    <div class="form-group">
+        <label>Mot de passe</label>
+        <input type="password" name="psw" class="form-control" required >
     </div>
-</div>
 
-<div class="field-column">
-    <label for="confirm_psw">Confirmation du mot de passe</label>
-
-        <div>
-            <input type="password" class="demo-input-box"
-                name="confirm_psw" required>
-        </div>
-    <br>
-
-    <div class="field-column">
-        <div>
-            <button type="submit" name="submit" value="OK"> S'enregistrer</button> 
-        </div>
+    <div class="form-group">
+        <label>Confirmation du mot de passe</label>
+        <input type="password" name="confirm_psw" class="form-control" required>
     </div>
-</div>
+
+    <div class="form-group">
+    <button type="submit" name="save" value="OK" class="btn btn-primary">S'enregistrer</button>
+    </div>
+
 </form>
+</div>
 
 </body>
 </html>
-
 

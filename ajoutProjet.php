@@ -8,11 +8,12 @@
   <body>
 
 
-  	<?php
+    <?php
 session_start();
 include_once("php/code.php");
 
 $work = new Works;
+
 
 if(isset($_POST["submit"]))
 {
@@ -41,10 +42,11 @@ if(isset($_POST["submit"]))
       Envoyez ce fichier : <input name="userfile" type="file" />
       <input type="submit" value="Envoyer le fichier" />
     </form>
+
     <form action="ajoutProjet.php" method="post">
 
     <div class="container">
-        <label for="title"><b>titre</b></label>
+        <label for="title"><b>Titre</b></label>
         <input type="text" placeholder="Enter title" name="title" required>
 
         <label for="desc"><b>Description</b></label>

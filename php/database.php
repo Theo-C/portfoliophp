@@ -1,9 +1,8 @@
 <?php
 
-$DB_DSN = "mysql:dbname=php;host=localhost";
-$DB_USER = "php";
-$DB_PASSWORD = "phpmmi";
-
+$DB_DSN = "mysql:dbname=portfolio;host=localhost";
+$DB_USER = "nathan";
+$DB_PASSWORD = "abcd";
 
 try {
     $db = new PDO($DB_DSN, $DB_USER, $DB_PASSWORD);

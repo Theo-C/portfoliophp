@@ -1,5 +1,6 @@
-<?php
+<?php 
 session_start();
 $_SESSION["account"] = [];
-header('Location: index.php');
+
+header('Location: /');
 ?>
